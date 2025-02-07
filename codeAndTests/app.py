@@ -3,7 +3,6 @@ from flask import Flask, request, redirect, url_for, flash, render_template, ses
 from codeAndTests.forms import SignupForm, LoginForm, ProfileForm, ServiceForm, EmailForm
 from flask_debugtoolbar import DebugToolbarExtension
 from firebase_admin import credentials, initialize_app, auth as admin_auth, datetime, db as rdb
-from mapbox import Directions
 from pyrebase import initialize_app as pyrebase_init
 from codeAndTests.models.models import connect_db, User, Service, db
 from codeAndTests.config import Config
