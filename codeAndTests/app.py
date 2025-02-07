@@ -3,7 +3,7 @@ from flask import Flask, request, redirect, url_for, flash, render_template, ses
 from codeAndTests.forms import SignupForm, LoginForm, ProfileForm, ServiceForm, EmailForm
 from flask_debugtoolbar import DebugToolbarExtension
 from firebase_admin import credentials, initialize_app, auth as admin_auth, datetime, db as rdb
-from pyrebase import initialize_app as pyrebase_init
+import pyrebase
 from codeAndTests.models.models import connect_db, User, Service, db
 from codeAndTests.config import Config
 from codeAndTests.authentication import firebase_config
@@ -82,7 +82,7 @@ def is_admin():
 
 
 
-firebase = pyrebase_init(firebase_config)
+firebase = pyrebase.initialize_app(firebase_config)
 database = firebase.database()
 auth = firebase.auth()
 
